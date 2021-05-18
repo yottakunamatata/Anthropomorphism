@@ -1,0 +1,545 @@
+body {
+    font-family: Microsoft JhengHei;
+    color: #292929;
+}
+
+
+
+.questionArea {
+    position: relative;
+    width: 100%;
+    height: 668px;
+    max-width: 1024px;
+    max-height: 668px;
+    background-color: #F8F8F8;
+    /* border: 1px solid #000; */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: 0 auto;
+    margin-top: 10px;
+    background-image: url("picture1.png");
+    background-size: 280px 550px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.pictureArea {
+    width: 100%;
+    height: 480px;
+    max-width: 720px;
+    min-height: 668px;
+    margin: 0 auto;
+    /* margin-top: 5%; */
+    /* padding-top: 50px; */
+    border-radius: 10px;
+
+    /* border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px; */
+    background-color: white;
+    /* border: 1px solid black; */
+    /* border-radius: 10px; */
+    margin: 0 auto;
+}
+
+.thankYou {
+
+    width: 250px;
+    height: 100px;
+    background-color: #f6c065;
+    border: 1px solid #f6c065;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 240px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 100px;
+    font-size: 20px;
+}
+
+.btnStart {
+    font-size: 28px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 80%;
+}
+
+.mainPicture {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
+
+}
+
+.answerArea {
+    width: 100%;
+    height: 100%;
+    max-width: 1024px;
+    min-height: 80px;
+    background-color: #FED18D;
+    border: 1px solid #FED18D;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin: 0 auto;
+}
+
+.btnYes {
+    width: 60px;
+    height: 40px;
+    margin-left: 39%;
+    margin-top: 2%;
+    display: none;
+}
+
+.btnNo {
+    width: 60px;
+    height: 40px;
+    margin-left: 10%;
+    margin-top: 2%;
+    display: none;
+}
+
+.textArea {
+    width: 100%;
+    height: 600px;
+    max-width: 280px;
+    min-height: 600px;
+    margin: 0 auto;
+    margin-top: 5%;
+    padding-top: 50px;
+    border-radius: 10px;
+}
+
+.textTitle {
+    width: 100%;
+    height: 130px;
+    max-width: 720px;
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    margin: 0 auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-weight: bold;
+    padding-top: 10px;
+    text-align: center;
+    line-height: 110px;
+    font-size: 18px;
+}
+
+.recommendClass {
+    position: absolute;
+    width: 269px;
+    height: 150px;
+    /* background: black; */
+    border: 0px solid #FFFFFF;
+    top: 150px;
+
+}
+
+.recommendImg {
+    width: 90px;
+    height: 90px;
+    /* float: left; */
+    margin-top: -5%;
+    margin-left: 30%;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.recommendImg_shin {
+    width: 150px;
+    height: 30px;
+    margin: 20%;
+    /* float: left; */
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+}
+
+.recommendImg2 {
+    width: 90px;
+    height: 90px;
+    float: left;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.recommendTitle {
+    padding-left: 4%;
+    margin-top: 10%;
+    font-size: 20px;
+    font-weight: 600;
+
+}
+
+.recommendText {
+    padding-top: 10%;
+    width: 230px;
+    height: 120px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 12px;
+}
+
+.recommendBubble_1 {
+    margin: 4%;
+    padding: 3%;
+    background-color: #D7FFC7;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.recommendBubble_2 {
+    margin: 4%;
+    padding: 3%;
+    background-color: #D7FFC7;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.recommendBubble_3 {
+    margin: 4%;
+    padding: 3%;
+    background-color: #D7FFC7;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.recommendBubble_4 {
+    margin: 4%;
+    padding: 3%;
+    background-color: #D7FFC7;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.recommenderPic {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
+}
+
+.recommendClass_main {
+    padding: 20px;
+}
+
+/* 類別選項 */
+
+
+
+.textFooter {
+    width: 720px;
+    height: 110px;
+    padding-top: 2%;
+    padding-left: 3%;
+    padding-right: 3%;
+    background: #cdd0cb;
+    border: 1px solid#cdd0cb;
+    margin: 0 auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-weight: bold;
+    text-align: left;
+    font-size: 18px;
+}
+
+.textFooter2 {
+    width: 720px;
+    height: 400px;
+    padding-top: 10%;
+    padding-left: 10%;
+    padding-right: 5%;
+    background: #cdd0cb;
+    border: 1px solid#cdd0cb;
+    margin: 0 auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-weight: bold;
+    text-align: left;
+    font-size: 20px;
+}
+
+
+.clear {
+    clear: both;
+}
+
+.btnNext {
+    float: right;
+    width: 120px;
+    height: 40px;
+    margin-right: 13%;
+    margin-top: 2%;
+}
+
+.topTitle {
+    width: 750px;
+    height: 80px;
+    background-color: #cfdac8;
+    border: 1px solid #cfdac8;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 80px;
+    font-size: 26px;
+}
+
+.examplePic {
+    margin-top: 5%;
+    float: left;
+    width: 33.3333%;
+    height: 440px;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.exampleImg {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
+}
+
+.stepDescription {
+    width: 70%;
+    height: 440px;
+    margin: 0 auto;
+    margin-top: 7%;
+}
+
+.list-group-item {
+    font-size: 20px;
+}
+
+.btn1 {
+    width: 100%;
+    max-width: 70px;
+    height: 40px;
+    margin-left: 2%;
+    margin-top: 2%;
+    float: left;
+    display: none;
+}
+
+.btn2 {
+    width: 100%;
+    max-width: 70px;
+    height: 40px;
+    margin-left: 2%;
+    margin-top: 2%;
+    float: left;
+    display: none;
+}
+
+.btn3 {
+    width: 100%;
+    max-width: 70px;
+    height: 40px;
+    margin-left: 2%;
+    margin-top: 2%;
+    float: left;
+    display: none;
+}
+
+.btn4 {
+    width: 100%;
+    max-width: 70px;
+    height: 40px;
+    margin-left: 2%;
+    margin-top: 2%;
+    float: left;
+    display: none;
+}
+
+.btn5 {
+    width: 100%;
+    max-width: 70px;
+    height: 40px;
+    margin-left: 2%;
+    margin-top: 2%;
+    float: left;
+    display: none;
+}
+
+.btn6 {
+    width: 100%;
+    max-width: 70px;
+    height: 40px;
+    margin-left: 2%;
+    margin-top: 2%;
+    float: left;
+    display: none;
+}
+
+@media screen and (max-width: 400px) {
+    .btn1 {
+        display: block;
+        width: 96%;
+        max-width: 380px;
+        height: 40px;
+
+        margin-left: 2%;
+        margin-top: 2%;
+
+        display: none;
+    }
+
+    .btn2 {
+        display: block;
+        width: 96%;
+        max-width: 380px;
+        height: 40px;
+        margin-left: 2%;
+        margin-top: 2%;
+
+        display: none;
+    }
+
+    .btn3 {
+        width: 96%;
+        max-width: 380px;
+        height: 40px;
+        margin-left: 2%;
+        margin-top: 2%;
+
+        display: none;
+    }
+
+    .btn4 {
+        width: 96%;
+        max-width: 380px;
+        height: 40px;
+        margin-left: 2%;
+        margin-top: 2%;
+
+        display: none;
+    }
+
+    .btn5 {
+        width: 96%;
+        max-width: 380px;
+        height: 40px;
+        margin-left: 2%;
+        margin-top: 2%;
+
+        display: none;
+    }
+
+    .btn6 {
+        width: 96%;
+        max-width: 380px;
+        height: 40px;
+
+        margin-left: 2%;
+        margin-top: 2%;
+
+        display: none;
+    }
+}
+
+.buyText1 {
+    width: 100px;
+    height: 40px;
+    margin-left: 11.6%;
+    margin-top: 2%;
+    line-height: 40px;
+    float: left;
+    color: #292929;
+    display: none;
+}
+
+.buyText2 {
+    width: 100px;
+    height: 40px;
+    margin-left: 2%;
+    margin-top: 2%;
+    line-height: 40px;
+    float: left;
+    color: #292929;
+    display: none;
+}
+
+.checkBox {
+    float: left;
+    height: 60px;
+    margin-top: -30px;
+    margin-left: 50px;
+}
+
+.interactive {
+    padding-top: 250px;
+    font-size: 20px;
+    text-align: center;
+    color: #292929;
+    font-weight: bold;
+    text-align: center;
+}
+
+.phone {
+    position: relative;
+    width: 100%;
+    height: 668px;
+    max-width: 360px;
+    background: #FFFFFF;
+    border: 0px solid #000;
+    background-image: url("picture1.png");
+    background-size: 360px 668px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+}
+
+.icon {
+    position: absolute;
+    max-width: 60px;
+    max-height: 60px;
+    left: 40px;
+    top: 120px;
+}
+
+.recommendImg_shin_icon {
+    position: absolute;
+    width: 150px;
+    height: 30px;
+    /* margin: 20%; */
+    top: 140px;
+    left: 30px;
+    /* float: left; */
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+}
+
+.iconTalk {
+    width: 260px;
+    position: absolute;
+    background: #FFFFFF;
+    border: 1px solid #000;
+    left: 40px;
+    top: 185px;
+}
+
+.productPic {
+    position: absolute;
+    width: 310px;
+    height: 280px;
+    bottom: 79px;
+    left: 21px;
+}
+
+.productPic img {
+    max-height: 100%;
+    max-width: 100%;
+}

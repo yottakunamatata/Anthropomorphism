@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <button>123</button>
+    <input type="text" id="nameValue">
+    <input type="text" id="phoneValue">
+    <input type="text" id="demandValue">
+    <script>
+        let sendButton = document.querySelector('button');
+
+        function send() {
+            let name = document.querySelector('#nameValue').value;
+            let phone = document.querySelector('#phoneValue').value;
+            let demand = document.querySelector('#demandValue').value;
+            console.log(name,phone,demand)
+            $.ajax({
+                url: "https://script.google.com/macros/s/AKfycbwfA3JR9FXgftsdqheKGGXGc1iCnJ7s1UlFDNP7b6n_HJTWL2Bcr8yhQA/exec",
+                data: {
+                    "name": name,
+                    "phone": phone,
+                    "demand": demand
+                },
+                success: function (response) {
+                    if (response == "成功") {
+                        alert("成功");
+                    }
+                },
+            });
+        };
+
+        // function send() {
+
+            
+
+        //     var oReq = new XMLHttpRequest();
+        //     oReq.open("GET", "https://script.google.com/macros/s/AKfycbwfA3JR9FXgftsdqheKGGXGc1iCnJ7s1UlFDNP7b6n_HJTWL2Bcr8yhQA/exec");
+        //     oReq.send();
+        // }
+        sendButton.addEventListener('click', send);
+
+
+    </script>
+</body>
+
+</html>
