@@ -105,7 +105,7 @@
 
 
 
-
+    // 六項中只能選三項
 
     var sport = false;
     var life = false;
@@ -115,6 +115,7 @@
     var accessory = false;
     var c = 0, limit = 3;
     function doCheck(obj) {
+        // if obj.checked == true c++ ; else c--
         obj.checked ? c++ : c--;
         if (c > limit) {
             obj.checked = false;
@@ -134,8 +135,8 @@
         accessory = $('#accessory').is(":checked");
     }
 
-
-
+    // 自我介紹完
+    // 類別選項出現
 
     function nextStep1_1() {
         var answerArea = document.querySelector('.answerArea');

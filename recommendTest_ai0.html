@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- 個人助理介紹流程 -->
 
 <head>
     <!-- Google Tag Manager -->
@@ -91,7 +92,7 @@
         accessory = getUrlParameter('accessory');
 
         if (sport == 'true') {
-            recommendList.push('sport/sport' + (getRandom(maxSport) + 1));
+            recommendList.push('pic_only/sport/' + (getRandom(maxSport) + 1));
         }
         else {
             falseRecommendList.push('sport')
@@ -99,7 +100,7 @@
         }
 
         if (life == 'true') {
-            recommendList.push('life/life' + (getRandom(maxLife) + 1));
+            recommendList.push('pic_only/life/' + (getRandom(maxLife) + 1));
         }
         else {
             falseRecommendList.push('life')
@@ -107,7 +108,7 @@
         }
 
         if (food == 'true') {
-            recommendList.push('food/food' + (getRandom(maxFood) + 1));
+            recommendList.push('pic_only/food/' + (getRandom(maxFood) + 1));
         }
         else {
             falseRecommendList.push('food')
@@ -115,7 +116,7 @@
         }
 
         if (home == 'true') {
-            recommendList.push('home/home' + (getRandom(maxHome) + 1));
+            recommendList.push('pic_only/home/' + (getRandom(maxHome) + 1));
         }
         else {
             falseRecommendList.push('home')
@@ -123,7 +124,7 @@
         }
 
         if (computer == 'true') {
-            recommendList.push('computer/computer' + (getRandom(maxComputer) + 1));
+            recommendList.push('pic_only/computer/' + (getRandom(maxComputer) + 1));
         }
         else {
             falseRecommendList.push('computer')
@@ -131,7 +132,7 @@
         }
 
         if (accessory == 'true') {
-            recommendList.push('accessory/accessory' + (getRandom(maxAccessory) + 1));
+            recommendList.push('pic_only/accessory/' + (getRandom(maxAccessory) + 1));
         }
         else {
             falseRecommendList.push('accessory')
@@ -161,16 +162,19 @@
         $(".buyText1").show(); $(".buyText2").show(); $(".btn1").show(); $(".btn2").show(); $(".btn3").show(); $(".btn4").show(); $(".btn5").show(); $(".btn6").show();
         var mainPicture = document.querySelector('.pictureArea');
         // mainPicture.innerHTML = '<div class="interactive">根據剛剛和AI助理的互動，您覺得AI助理有多像真人？</div>';
-        mainPicture.innerHTML = '<div class="phone"><img src="pictures/ai.png" alt="" class="icon"> <div class="iconTalk">本系統利用您的偏好結合系統中的巨量資料，分析出以下結果，請問您喜歡以下產品嗎？</div>  <div class="productPic"><img src="pic_only/food/7.png" alt=""></div>  </div>';
+        mainPicture.innerHTML = '<div class="phone"><img src="pictures/ai.png" alt="" class="icon"><div></div> <div class="iconTalk">AI購物程式根據您的喜好，找到了這款商品，想請問您喜歡嗎？如果不滿意，我會嘗試再找其他類型的商品給您 </div>  <div class="productPic"><img src=' + recommendList[questionsCount] + '.png></div>  </div>';
     }
 
 
-
+    // excel
+    // local storage : 存放答案與圖片的list
+    // 紀錄推薦1~3的圖片跟喜好度
+    // 4以後的ans是個人化問項
 
     function say2(x) {
         questionsCount++;
 
-        var ask = '非推薦題'
+        var ask = recommendList[0]
         if ((questionsCount - 2) >= 0) {
             ask = recommendList[questionsCount - 2] + '.png'
         }
@@ -217,7 +221,7 @@
         document.querySelector('.buyText2').innerHTML = '非常想購買';
         var mainPicture = document.querySelector('.pictureArea');
         if (questionsCount <= (questionsNum - 1)) {
-            mainPicture.innerHTML = '<div class="phone"><img src="pictures/ai.png" alt="" class="icon"> <div class="iconTalk">本系統利用您的偏好結合系統中的巨量資料，分析出以下結果，請問您喜歡以下產品嗎？</div>  <div class="productPic"><img src="pic_only/food/' + questionsCount + '.png" alt=""></div>  </div>';
+            mainPicture.innerHTML = '<div class="phone"><img src="pictures/ai.png" alt="" class="icon"><div></div> <div class="iconTalk">AI購物程式根據您的喜好，找到了這款商品，想請問您喜歡嗎？如果不滿意，我會嘗試再找其他類型的商品給您 </div>  <div class="productPic"><img src=' + recommendList[questionsCount] + '.png></div>  </div>';
         }
         else if (questionsCount == questionsNum) {
             document.querySelector('.buyText1').innerHTML = '沒有';

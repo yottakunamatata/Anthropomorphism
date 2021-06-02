@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- 商品推薦流程 -->
 
 <head>
     <!-- Google Tag Manager -->
@@ -60,8 +61,8 @@
 </body>
 
 <script>
-    window.onload = function(){
-        window.document.documentElement.scrollTop=800;
+    window.onload = function () {
+        window.document.documentElement.scrollTop = 800;
     }
     var recommendList = []
     var sport = false;
@@ -156,12 +157,12 @@
 
 
         }
-       // questionsNum = recommendList.length;
-       questionsNum = 6;
+        // questionsNum = recommendList.length;
+        questionsNum = 6;
         $(".buyText1").show(); $(".buyText2").show(); $(".btn1").show(); $(".btn2").show(); $(".btn3").show(); $(".btn4").show(); $(".btn5").show(); $(".btn6").show();
         var mainPicture = document.querySelector('.pictureArea');
-     //   mainPicture.innerHTML = '<div class="interactive">根據剛剛和AI助理的互動，您覺得AI助理有多像真人？</div>';
-     mainPicture.innerHTML = '<div class="phone"><img src="pictures/ai.png" alt="" class="icon"> <div class="iconTalk">系統已經根據您的喜好，找出最符合您的產品，請問您想購買嗎？</div>  <div class="productPic"><img src="pic_only/food/4.png" alt=""></div>  </div>';
+        //   mainPicture.innerHTML = '<div class="interactive">根據剛剛和AI助理的互動，您覺得AI助理有多像真人？</div>';
+        mainPicture.innerHTML = '<div class="phone"><img src="pictures/ai.png" alt="" class="icon"> <div class="iconTalk">系統已經根據您的喜好，找出最符合您的產品，請問您想購買嗎？</div>  <div class="productPic"><img src="pic_only/food/4.png" alt=""></div>  </div>';
     }
 
 
@@ -175,54 +176,54 @@
             ask = recommendList[questionsCount - 2] + '.png'
         }
 
-        switch (x){
+        switch (x) {
             case 1:
-            btn1Count++;
-            localStorage.setItem('aiPng' + String(questionsCount), ask);
-            localStorage.setItem('aiAns' + String(questionsCount), '1');
-            break;
+                btn1Count++;
+                localStorage.setItem('aiPng' + String(questionsCount), ask);
+                localStorage.setItem('aiAns' + String(questionsCount), '1');
+                break;
 
             case 2:
-            btn2Count++; 
-            localStorage.setItem('aiPng' + String(questionsCount), ask);
-            localStorage.setItem('aiAns' + String(questionsCount), '2');
-            break;  
-            
+                btn2Count++;
+                localStorage.setItem('aiPng' + String(questionsCount), ask);
+                localStorage.setItem('aiAns' + String(questionsCount), '2');
+                break;
+
             case 3:
-            btn3Count++;
-            localStorage.setItem('aiPng' + String(questionsCount), ask);
-            localStorage.setItem('aiAns' + String(questionsCount), '3'); 
-            break; 
+                btn3Count++;
+                localStorage.setItem('aiPng' + String(questionsCount), ask);
+                localStorage.setItem('aiAns' + String(questionsCount), '3');
+                break;
 
             case 4:
-            btn4Count++;
-            localStorage.setItem('aiPng' + String(questionsCount), ask);
-            localStorage.setItem('aiAns' + String(questionsCount), '4'); 
-            break; 
+                btn4Count++;
+                localStorage.setItem('aiPng' + String(questionsCount), ask);
+                localStorage.setItem('aiAns' + String(questionsCount), '4');
+                break;
 
             case 5:
-            btn5Count++;
-            localStorage.setItem('aiPng' + String(questionsCount), ask);
-            localStorage.setItem('aiAns' + String(questionsCount), '5'); 
-            break; 
+                btn5Count++;
+                localStorage.setItem('aiPng' + String(questionsCount), ask);
+                localStorage.setItem('aiAns' + String(questionsCount), '5');
+                break;
 
             case 6:
-            btn6Count++;
-            localStorage.setItem('aiPng' + String(questionsCount), ask);
-            localStorage.setItem('aiAns' + String(questionsCount), '6'); 
-            break; 
+                btn6Count++;
+                localStorage.setItem('aiPng' + String(questionsCount), ask);
+                localStorage.setItem('aiAns' + String(questionsCount), '6');
+                break;
         }
-       // document.querySelector('.textTitle').innerHTML = '<div class="recommendImg2"><img src="pictures/ai.png" class="recommenderPic" alt=""></div>根據您的過去資料，經演算法分析後，最適合您的商品是：';
+        // document.querySelector('.textTitle').innerHTML = '<div class="recommendImg2"><img src="pictures/ai.png" class="recommenderPic" alt=""></div>根據您的過去資料，經演算法分析後，最適合您的商品是：';
         document.querySelector('.buyText1').innerHTML = '非常不想購買';
         document.querySelector('.buyText2').innerHTML = '非常想購買';
         var mainPicture = document.querySelector('.pictureArea');
         if (questionsCount <= questionsNum) {
-            mainPicture.innerHTML = '<div class="phone"><img src="pictures/ai.png" alt="" class="icon"> <div class="iconTalk">系統根據您的喜好，為您找出以下商品，請問您想購買嗎？</div>  <div class="productPic"><img src="pic_only/food/'+questionsCount+'.png" alt=""></div>  </div>';
+            mainPicture.innerHTML = '<div class="phone"><img src="pictures/ai.png" alt="" class="icon"> <div class="iconTalk">系統根據您的喜好，為您找出以下商品，請問您想購買嗎？</div>  <div class="productPic"><img src="pic_only/food/' + questionsCount + '.png" alt=""></div>  </div>';
         }
         else {
             window.location.href = "recommendTest_shin.html"
         }
-        
+
     }
     function say2_2() {
         btn2Count++;

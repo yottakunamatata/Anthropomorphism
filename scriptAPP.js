@@ -1,7 +1,9 @@
+// 紀錄 excel
+
 function sendSheet1(fn) {
 
     $.ajax({
-        url: "https://script.google.com/macros/s/AKfycbwfA3JR9FXgftsdqheKGGXGc1iCnJ7s1UlFDNP7b6n_HJTWL2Bcr8yhQA/exec",
+        url: "https://script.google.com/macros/s/AKfycbxW-pJ89qZlh_c3DuGdCLNHtwn3nFLDZrxX_npTOKTziBoWgRVIHLd4vnLks0PqiUtd/exec",
         data: {
             "time": Date.now(),
             "Charactor2": '小艾',
@@ -36,7 +38,7 @@ function sendSheet1(fn) {
 function sendSheet2(fn) {
 
     $.ajax({
-        url: "https://script.google.com/macros/s/AKfycbwfA3JR9FXgftsdqheKGGXGc1iCnJ7s1UlFDNP7b6n_HJTWL2Bcr8yhQA/exec",
+        url: "https://script.google.com/macros/s/AKfycby-xztofrkbLqmyDOuVIjJrfMJAJ65D4rsz_fCReOPErLwXCJ8K6m210rCyxB29iwOR/exec",
         data: {
             "time": Date.now(),
             "Charactor2": 'AI助理',
@@ -70,7 +72,7 @@ function sendSheet2(fn) {
 }
 function sendSheet3(fn) {
     $.ajax({
-        url: "https://script.google.com/macros/s/AKfycbwfA3JR9FXgftsdqheKGGXGc1iCnJ7s1UlFDNP7b6n_HJTWL2Bcr8yhQA/exec",
+        url: "https://script.google.com/macros/s/AKfycby-xztofrkbLqmyDOuVIjJrfMJAJ65D4rsz_fCReOPErLwXCJ8K6m210rCyxB29iwOR/exec",
         data: {
             "time": Date.now(),
             "Charactor2": '推薦系統',
