@@ -21,4 +21,4 @@ function httpGet(theUrl)
     return xmlHttp.responseText;
 }
 
-var abcde = httpGet('https://sheets.googleapis.com/v4/spreadsheets/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/values/Sheet1!A1:D3?majorDimension=COLUMNS')
+var abcde = httpGet('https://script.google.com/a/macros/mail.nuk.edu.tw/s/AKfycbzUEuJwnf8Yi8FCg-FCjeL_-KcvbAtINgB_uRDNQkM3-smZ7qoFYMbl5Q/exec')

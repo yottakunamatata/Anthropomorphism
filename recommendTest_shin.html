@@ -60,9 +60,15 @@
 </body>
 
 <script>
-     window.onload = function(){
-        window.document.documentElement.scrollTop=800;
+    window.onload = function () {
+        window.document.documentElement.scrollTop = 800;
     }
+    // ****************
+    // function fn() {
+    //     $(".btnNext").attr("disabled", false)
+    // }
+
+
     var recommendList = []
     var sport = false;
     var life = false;
@@ -76,9 +82,13 @@
     var questionsCount = 0;
     var yesCount = 0, noCount = 0;
     var btn1Count = 0, btn2Count = 0, btn3Count = 0, btn4Count = 0, btn5Count = 0, btn6Count = 0;
+
+    // 呼叫 function say3()
     window.onload = function () {
         start3();
     };
+
+
 
     function start3() {
         var falseRecommendList = []
@@ -156,17 +166,20 @@
 
 
         }
-       // questionsNum = recommendList.length;
-       questionsNum = 9;
+        // questionsNum = recommendList.length;
+        questionsNum = 9;
 
         $(".buyText1").show(); $(".buyText2").show(); $(".btn1").show(); $(".btn2").show(); $(".btn3").show(); $(".btn4").show(); $(".btn5").show(); $(".btn6").show();
         var mainPicture = document.querySelector('.pictureArea');
-     //   mainPicture.innerHTML = '<div class="interactive">依據欣欣推薦系統的介紹，您覺得欣欣推薦系統有多像真人？</div>';
-     mainPicture.innerHTML = '<div class="phone"><img src="pictures/shin.png" alt="" class="icon"> <div class="iconTalk">欣欣購物平台推薦此特賣商品給您，請問您想購買嗎？</div>  <div class="productPic"><img src="pic_only/sport/4.png" alt=""></div>  </div>';
+        //   mainPicture.innerHTML = '<div class="interactive">依據欣欣推薦系統的介紹，您覺得欣欣推薦系統有多像真人？</div>';
+        mainPicture.innerHTML = '<div class="phone"><img src="pictures/shin.png" alt="" class="icon"> <div class="iconTalk">欣欣購物平台推薦此特賣商品給您，請問您想購買嗎？</div>  <div class="productPic"><img src="pic_only/sport/4.png" alt=""></div>  </div>';
     }
 
 
-
+    // excel
+    // local storage : 存放答案與圖片的list
+    // 紀錄推薦1~3的圖片跟喜好度
+    // 4以後的ans是個人化問項
 
     function say3(x) {
         questionsCount++;
@@ -175,71 +188,71 @@
         if ((questionsCount - 2) >= 0) {
             ask = recommendList[questionsCount - 2] + '.png'
         }
-        
-        switch (x){
+
+        switch (x) {
             case 1:
-            btn1Count++;
-            localStorage.setItem('shinPng' + String(questionsCount), ask);
-            localStorage.setItem('shinAns' + String(questionsCount), '1');
-            break;
+                btn1Count++;
+                localStorage.setItem('shinPng' + String(questionsCount), ask);
+                localStorage.setItem('shinAns' + String(questionsCount), '1');
+                break;
 
             case 2:
-            btn2Count++;
-            localStorage.setItem('shinPng' + String(questionsCount), ask);
-            localStorage.setItem('shinAns' + String(questionsCount), '2'); 
-            break;  
-            
+                btn2Count++;
+                localStorage.setItem('shinPng' + String(questionsCount), ask);
+                localStorage.setItem('shinAns' + String(questionsCount), '2');
+                break;
+
             case 3:
-            btn3Count++;
-            localStorage.setItem('shinPng' + String(questionsCount), ask);
-            localStorage.setItem('shinAns' + String(questionsCount), '3'); 
-            break; 
+                btn3Count++;
+                localStorage.setItem('shinPng' + String(questionsCount), ask);
+                localStorage.setItem('shinAns' + String(questionsCount), '3');
+                break;
 
             case 4:
-            btn4Count++;
-            localStorage.setItem('shinPng' + String(questionsCount), ask);
-            localStorage.setItem('shinAns' + String(questionsCount), '4'); 
-            break; 
+                btn4Count++;
+                localStorage.setItem('shinPng' + String(questionsCount), ask);
+                localStorage.setItem('shinAns' + String(questionsCount), '4');
+                break;
 
             case 5:
-            btn5Count++;
-            localStorage.setItem('shinPng' + String(questionsCount), ask);
-            localStorage.setItem('shinAns' + String(questionsCount), '5'); 
-            break; 
+                btn5Count++;
+                localStorage.setItem('shinPng' + String(questionsCount), ask);
+                localStorage.setItem('shinAns' + String(questionsCount), '5');
+                break;
 
             case 6:
-            btn6Count++; 
-            localStorage.setItem('shinPng' + String(questionsCount), ask);
-            localStorage.setItem('shinAns' + String(questionsCount), '6');
-            break; 
+                btn6Count++;
+                localStorage.setItem('shinPng' + String(questionsCount), ask);
+                localStorage.setItem('shinAns' + String(questionsCount), '6');
+                break;
         }
 
 
-       // document.querySelector('.textTitle').innerHTML = '以下是我們的精選熱銷商品，推薦給您';
+        // document.querySelector('.textTitle').innerHTML = '以下是我們的精選熱銷商品，推薦給您';
         document.querySelector('.buyText1').innerHTML = '非常不想購買';
         document.querySelector('.buyText2').innerHTML = '非常想購買';
         var mainPicture = document.querySelector('.pictureArea');
-        if (questionsCount <= (questionsNum-4)) {
-            mainPicture.innerHTML = '<div class="phone"><img src="pictures/shin.png" alt="" class="icon"> <div class="iconTalk">欣欣購物平台推薦此特賣商品給您，請問您想購買嗎？</div>  <div class="productPic"><img src="pic_only/sport/'+questionsCount+'.png" alt=""></div>  </div>';
+        if (questionsCount <= (questionsNum - 4)) {
+            mainPicture.innerHTML = '<div class="phone"><img src="pictures/shin.png" alt="" class="icon"> <div class="iconTalk">欣欣購物平台推薦此特賣商品給您，請問您想購買嗎？</div>  <div class="productPic"><img src="pic_only/sport/' + questionsCount + '.png" alt=""></div>  </div>';
         }
-        else if (questionsCount <= (questionsNum-3)) {
+        else if (questionsCount <= (questionsNum - 3)) {
             document.querySelector('.buyText1').innerHTML = '非常不像';
-        document.querySelector('.buyText2').innerHTML = '非常像';
+            document.querySelector('.buyText2').innerHTML = '非常像';
             mainPicture.innerHTML = '<div class="interactive">根據剛剛和小艾的互動，您覺得小艾有多像真人？</div>';
         }
-        else if (questionsCount <= (questionsNum-2)) {
+        else if (questionsCount <= (questionsNum - 2)) {
             document.querySelector('.buyText1').innerHTML = '非常不像';
-        document.querySelector('.buyText2').innerHTML = '非常像';
+            document.querySelector('.buyText2').innerHTML = '非常像';
             mainPicture.innerHTML = '<div class="interactive">根據剛剛和AI助理的互動，您覺得AI助理有多像真人？</div>';
         }
-        else if (questionsCount <= (questionsNum-1)) {
+        else if (questionsCount <= (questionsNum - 1)) {
             document.querySelector('.buyText1').innerHTML = '非常不像';
-        document.querySelector('.buyText2').innerHTML = '非常像';
+            document.querySelector('.buyText2').innerHTML = '非常像';
             mainPicture.innerHTML = '<div class="interactive">依據欣欣推薦系統的介紹，您覺得欣欣推薦系統有多像真人？</div>';
         }
         else {
-            sendSheet3(callbackFn)
-          //  window.location.href = "thanks.html"
+            sendSheet3(fn)
+            //  window.location.href = "thanks.html"
         }
     }
     function say3_2() {
@@ -251,16 +264,16 @@
         }
         localStorage.setItem('shinPng' + String(questionsCount), ask);
         localStorage.setItem('shinAns' + String(questionsCount), '2');
-       // document.querySelector('.textTitle').innerHTML = '以下是我們的精選熱銷商品，推薦給您';
+        // document.querySelector('.textTitle').innerHTML = '以下是我們的精選熱銷商品，推薦給您';
         document.querySelector('.buyText1').innerHTML = '非常不想購買';
         document.querySelector('.buyText2').innerHTML = '非常想購買';
         var mainPicture = document.querySelector('.pictureArea');
         if (questionsCount <= questionsNum) {
-            mainPicture.innerHTML = '<div class="phone"><img src="pictures/shin.png" alt="" class="icon"> <div class="iconTalk">欣欣購物平台推薦此特賣商品給您，請問您想購買嗎？</div>  <div class="productPic"><img src="pic_only/sport/'+questionsCount+'.png" alt=""></div>  </div>';
+            mainPicture.innerHTML = '<div class="phone"><img src="pictures/shin.png" alt="" class="icon"> <div class="iconTalk">欣欣購物平台推薦此特賣商品給您，請問您想購買嗎？</div>  <div class="productPic"><img src="pic_only/sport/' + questionsCount + '.png" alt=""></div>  </div>';
         }
         else {
             sendSheet3(callbackFn)
-          //  window.location.href = "thanks.html"
+            //  window.location.href = "thanks.html"
         }
     }
     function say3_3() {
@@ -281,7 +294,7 @@
         }
         else {
             sendSheet3(callbackFn)
-          //  window.location.href = "thanks.html"
+            //  window.location.href = "thanks.html"
         }
     }
     function say3_4() {
@@ -302,7 +315,7 @@
         }
         else {
             sendSheet3(callbackFn)
-          //  window.location.href = "thanks.html"
+            //  window.location.href = "thanks.html"
         }
     }
     function say3_5() {
@@ -323,7 +336,7 @@
         }
         else {
             sendSheet3(callbackFn)
-          //  window.location.href = "thanks.html"
+            //  window.location.href = "thanks.html"
         }
     }
     function say3_6() {
@@ -344,13 +357,13 @@
         }
         else {
             sendSheet3(callbackFn)
-          //  window.location.href = "thanks.html"
+            //  window.location.href = "thanks.html"
         }
     }
- 
-        function callbackFn(){
-            window.location.href = "thanks.html";
-        }
+
+    function callbackFn() {
+        window.location.href = "thanks.html";
+    }
 
 
 

@@ -69,23 +69,14 @@
     window.onload = function () {
         window.document.documentElement.scrollTop = 800;
     }
-    var leftSeconds = 2;
-    var intervalid;
-    $(function () {
-        $(".btnNext").attr("disabled", true);//開始讓他不可按
-        intervalid = setInterval("CountDown()", 1000);
-    });
 
-    function CountDown() {
-        if (leftSeconds == 0) {
-            $(".btnNext").attr("disabled", false);
-            clearInterval(intervalid);
-            return;
-        }
-        leftSeconds--;
-        // $("#btnReg").val("請仔細閱讀"+leftSeconds+"秒");
+    function fn() {
+        $(".btnNext").attr("disabled", false)
     }
-
+    // 將function fn 帶入function sendSheet1
+    // sendSheet1 在scriptApp
+    sendSheet1(fn)
+    // sendSheet1 : 將localStorage的資料回傳給google sheet
 
     var sport = false;
     var life = false;
@@ -94,6 +85,8 @@
     var computer = false;
     var accessory = false;
     var c = 0, limit = 3;
+
+    // 抓受測者在六類商品中選了哪三類
     function doCheck(obj) {
         // if obj.checked true: c++ ; else: c--
         obj.checked ? c++ : c--;
@@ -115,6 +108,7 @@
         accessory = $('#accessory').is(":checked");
     }
 
+    // 
     function nextStep1_1() {
         var answerArea = document.querySelector('.answerArea');
         var recommendText = document.querySelector('.recommendText');
@@ -123,6 +117,8 @@
         recommendText.innerHTML = '<div class="recommendImg2"><img src="pictures/ai.png" class="recommenderPic" alt=""></div>平常您喜歡在哪些類別做消費呢？（6種中選3種）'
         recommendClass_main.innerHTML = '<div class="recommendImg"><img src="pictures/ai.png" class="recommenderPic" alt=""></div><div class="recommendText">平常您喜歡在哪些類別做消費呢？<br>（6種中選3種）</div><div class="form-check"form action="" style="padding-left: 0.5em;"><div class="checkBox"><input class="form-check-input" type="checkbox" name="hobby1" id="sport" onclick="doCheck(this)" /><label class="form-check-label" for="sport">運動戶外</label></div><div  class="checkBox"><input class="form-check-input" type="checkbox" name="hobby2" id="life" onclick="doCheck(this)" /><label class="form-check-label" for="life">生活用品</label></div><div class="checkBox"><input class="form-check-input" type="checkbox" name="hobby3" id="food" onclick="doCheck(this)" /><label class="form-check-label" for="food">食品</label></div><div class="checkBox"><input class="form-check-input" type="checkbox" name="hobby6" id="accessory"onclick="doCheck(this)" /><label class="form-check-label" for="accessory">裝飾配件</label></div><div class="checkBox"><input class="form-check-input" type="checkbox" name="hobby5" id="computer"onclick="doCheck(this)" /><label class="form-check-label" for="computer">電腦周邊</label></div><div class="checkBox"><input class="form-check-input" type="checkbox" name="hobby4" id="home"onclick="doCheck(this)" /><label class="form-check-label" for="home">家電</label></div><div class="clear"></div></form></div>';
     }
+
+    // 沒用到！！
 
     function nextStep2_1() {
 

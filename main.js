@@ -1,11 +1,11 @@
 //    2/23之後的
 
-var maxFood = 7;
-var maxLife = 26;
-var maxHome = 5;
-var maxComputer = 16;
-var maxSport = 15;
-var maxAccessory = 9;
+var maxFood = 6;
+var maxLife = 24;
+var maxHome = 11;
+var maxComputer = 15;
+var maxSport = 12;
+var maxAccessory = 8;
 
 
 

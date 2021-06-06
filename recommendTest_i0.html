@@ -80,6 +80,7 @@
         start1();
     };
 
+    // 從勾選的類別中任意挑選項目進 recommendList
     function start1() {
         var falseRecommendList = []
         var falseRecommendListMax = []
@@ -138,6 +139,7 @@
             falseRecommendListMax.push(maxAccessory);
         }
 
+        // 題數<3時 推薦商品
         var i = 0
         while (i < 3) {
             var nowPushNum = getRandom(falseRecommendList.length);

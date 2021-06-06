@@ -63,6 +63,11 @@
     window.onload = function () {
         window.document.documentElement.scrollTop = 800;
     }
+    function fn() {
+        $(".btnNext").attr("disabled", false)
+    }
+
+
     var recommendList = []
     var sport = false;
     var life = false;
@@ -76,6 +81,8 @@
     var questionsCount = 0;
     var yesCount = 0, noCount = 0;
     var btn1Count = 0, btn2Count = 0, btn3Count = 0, btn4Count = 0, btn5Count = 0, btn6Count = 0;
+
+
     window.onload = function () {
         start3();
     };
@@ -165,7 +172,10 @@
     }
 
 
-
+    // excel
+    // local storage : 存放答案與圖片的list
+    // 紀錄推薦1~3的圖片跟喜好度
+    // 4以後的ans是個人化問項
 
     function say3(x) {
         questionsCount++;
@@ -213,6 +223,7 @@
                 break;
         }
 
+        // 個人化問項
 
         // document.querySelector('.textTitle').innerHTML = '以下是我們的精選熱銷商品，推薦給您';
         document.querySelector('.buyText1').innerHTML = '非常不想購買';
@@ -242,10 +253,13 @@
             mainPicture.innerHTML = '<div class="interactive">我認為欣欣購物有給我量身打造的推薦商品</div>';
         }
         else {
+            // sendSheet3(fn)
             // sendSheet3(callbackFn)
             window.location.href = "thanks.html"
         }
     }
+
+    // 沒用到？？？
     function say3_2() {
         btn2Count++;
         questionsCount++;
@@ -355,6 +369,8 @@
     function callbackFn() {
         window.location.href = "thanks.html";
     }
+
+
 
 
 

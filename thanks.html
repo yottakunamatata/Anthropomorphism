@@ -46,3 +46,15 @@
 </body>
 
 </html>
+<script>
+    window.onload = function () {
+        window.document.documentElement.scrollTop = 800;
+    }
+
+    function fn() {
+        $(".btnNext").attr("disabled", false)
+    }
+    // 將function fn 帶入function sendSheet1
+    // sendSheet1 在scriptApp
+    sendSheet3(fn)
+</script>

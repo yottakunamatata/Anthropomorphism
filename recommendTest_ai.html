@@ -77,6 +77,8 @@
     var questionsCount = 0;
     var yesCount = 0, noCount = 0;
     var btn1Count = 0, btn2Count = 0, btn3Count = 0, btn4Count = 0, btn5Count = 0, btn6Count = 0;
+
+    // 載入時呼叫function start2()
     window.onload = function () {
         start2();
     };
@@ -165,7 +167,9 @@
         mainPicture.innerHTML = '<div class="phone"><img src="pictures/ai.png" alt="" class="icon"> <div class="iconTalk">系統已經根據您的喜好，找出最符合您的產品，請問您想購買嗎？</div>  <div class="productPic"><img src="pic_only/food/4.png" alt=""></div>  </div>';
     }
 
-
+    // 按下數字1~6 呼叫 function say1()
+    // 抓受測者每次回答的 png 跟 ans (小i)
+    // 存到localStorage
 
 
     function say2(x) {

@@ -62,6 +62,7 @@
     window.onload = function () {
         window.document.documentElement.scrollTop = 800;
     }
+
     var recommendList = []
     var sport = false;
     var life = false;
@@ -76,10 +77,12 @@
     var questionsCount = 0;
     var yesCount = 0, noCount = 0;
     var btn1Count = 0, btn2Count = 0, btn3Count = 0, btn4Count = 0, btn5Count = 0, btn6Count = 0;
+    // 載入時呼叫function start1()
     window.onload = function () {
         start1();
     };
 
+    // 從勾選的類別中任意挑選項目進 recommendList
     function start1() {
         var falseRecommendList = []
         var falseRecommendListMax = []
@@ -138,6 +141,7 @@
             falseRecommendListMax.push(maxAccessory);
         }
 
+        // 只會推薦三項商品
         var i = 0
         while (i < 3) {
             var nowPushNum = getRandom(falseRecommendList.length);
@@ -156,7 +160,10 @@
 
 
         }
-        // questionsNum = recommendList.length;
+
+
+        // 問題之回答有 1~6 , 1為不喜歡 6為很喜歡
+        // Question Aera
         questionsNum = 6;
         $(".buyText1").show(); $(".buyText2").show(); $(".btn1").show(); $(".btn2").show(); $(".btn3").show(); $(".btn4").show(); $(".btn5").show(); $(".btn6").show();
         var mainPicture = document.querySelector('.pictureArea');
@@ -164,8 +171,9 @@
         mainPicture.innerHTML = '<div class="phone"><img src="pictures/i.png" alt="" class="icon"> <div class="iconTalk">小艾根據您的喜好，找到了這款商品，一定非常適合您。請問您有意願購買嗎？(,,・ω・,,) </div>  <div class="productPic"><img src="pic_only/computer/4.png" alt=""></div>  </div>';
     }
 
-
-
+    // 按下數字1~6 呼叫 function say1()
+    // 抓受測者每次回答的 png 跟 ans (小i)
+    // 存到localStorage
 
     function say1(x) {
         questionsCount++;
@@ -215,6 +223,7 @@
 
 
 
+        // 6 題之後連到recommendTest_ai.html
 
         // document.querySelector('.textTitle').innerHTML = '我依據您的喜好，我推薦給您以下商品';
         document.querySelector('.buyText1').innerHTML = '非常不想購買';
