@@ -69,13 +69,30 @@
     window.onload = function () {
         window.document.documentElement.scrollTop = 800;
     }
-
     function fn() {
         $(".btnNext").attr("disabled", false)
     }
     // 將function fn 帶入function sendSheet1
     // sendSheet1 在scriptApp
-    sendSheet1(fn)
+    sendSheet2(fn)
+
+    var leftSeconds = 2;
+    var intervalid;
+    $(function () {
+        $(".btnNext").attr("disabled", true);//開始讓他不可按
+        intervalid = setInterval("CountDown()", 1000);
+    });
+
+    function CountDown() {
+        if (leftSeconds == 0) {
+            $(".btnNext").attr("disabled", false);
+            clearInterval(intervalid);
+            return;
+        }
+        leftSeconds--;
+        // $("#btnReg").val("請仔細閱讀"+leftSeconds+"秒");
+    }
+
     // sendSheet1 : 將localStorage的資料回傳給google sheet
 
     var sport = false;
@@ -135,7 +152,7 @@
         window.location.href = 'recommendTest_ai0.html?' + getParameter;
     }
 
-
+    // recommendTest_ai_random.html
 
 
 </script>

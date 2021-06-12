@@ -1,6 +1,6 @@
 function sendSheet2() {
     $.ajax({
-        url: "https://script.google.com/a/macros/mail.nuk.edu.tw/s/AKfycbzUEuJwnf8Yi8FCg-FCjeL_-KcvbAtINgB_uRDNQkM3-smZ7qoFYMbl5Q/exec",
+        url: "https://script.google.com/macros/s/AKfycbyKTVsHXJ_1Fg7fdAsdq3IzFA9bGurqIwt9MDLL8FkDQ7qWh9SwHLmpknAV7T0GFpko/exec",
        
         data: {
             "a": "rrr",

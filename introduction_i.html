@@ -85,6 +85,11 @@
         window.document.documentElement.scrollTop = 800;
     }
 
+    function fn() {
+        $(".btnNext").attr("disabled", false)
+    }
+    sendSheet1(fn)
+
     // 三秒後才可按下一頁的按鈕
     var leftSeconds = 2;
     var intervalid;

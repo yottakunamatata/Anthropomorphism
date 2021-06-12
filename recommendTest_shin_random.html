@@ -63,9 +63,10 @@
     window.onload = function () {
         window.document.documentElement.scrollTop = 800;
     }
-    function fn() {
-        $(".btnNext").attr("disabled", false)
-    }
+    // ****************
+    // function fn() {
+    //     $(".btnNext").attr("disabled", false)
+    // }
 
 
     var recommendList = []
@@ -82,10 +83,12 @@
     var yesCount = 0, noCount = 0;
     var btn1Count = 0, btn2Count = 0, btn3Count = 0, btn4Count = 0, btn5Count = 0, btn6Count = 0;
 
-
+    // 呼叫 function say3()
     window.onload = function () {
         start3();
     };
+
+
 
     function start3() {
         var falseRecommendList = []
@@ -98,7 +101,7 @@
         accessory = getUrlParameter('accessory');
 
         if (sport == 'true') {
-            recommendList.push('sport/sport' + (getRandom(maxSport) + 1));
+            recommendList.push('pic_only/sport/' + (getRandom(maxSport) + 1));
         }
         else {
             falseRecommendList.push('sport')
@@ -106,7 +109,7 @@
         }
 
         if (life == 'true') {
-            recommendList.push('life/life' + (getRandom(maxLife) + 1));
+            recommendList.push('pic_only/life' + (getRandom(maxLife) + 1));
         }
         else {
             falseRecommendList.push('life')
@@ -114,7 +117,7 @@
         }
 
         if (food == 'true') {
-            recommendList.push('food/food' + (getRandom(maxFood) + 1));
+            recommendList.push('pic_only/food' + (getRandom(maxFood) + 1));
         }
         else {
             falseRecommendList.push('food')
@@ -122,7 +125,7 @@
         }
 
         if (home == 'true') {
-            recommendList.push('home/home' + (getRandom(maxHome) + 1));
+            recommendList.push('pic_only/home' + (getRandom(maxHome) + 1));
         }
         else {
             falseRecommendList.push('home')
@@ -130,7 +133,7 @@
         }
 
         if (computer == 'true') {
-            recommendList.push('computer/computer' + (getRandom(maxComputer) + 1));
+            recommendList.push('pic_only/computer' + (getRandom(maxComputer) + 1));
         }
         else {
             falseRecommendList.push('computer')
@@ -138,7 +141,7 @@
         }
 
         if (accessory == 'true') {
-            recommendList.push('accessory/accessory' + (getRandom(maxAccessory) + 1));
+            recommendList.push('pic_only/accessory' + (getRandom(maxAccessory) + 1));
         }
         else {
             falseRecommendList.push('accessory')
@@ -163,12 +166,13 @@
 
 
         }
-        //   questionsNum = recommendList.length;
-        questionsNum = 3;
+        // questionsNum = recommendList.length;
+        questionsNum = 6;
+
         $(".buyText1").show(); $(".buyText2").show(); $(".btn1").show(); $(".btn2").show(); $(".btn3").show(); $(".btn4").show(); $(".btn5").show(); $(".btn6").show();
         var mainPicture = document.querySelector('.pictureArea');
         //   mainPicture.innerHTML = '<div class="interactive">依據欣欣推薦系統的介紹，您覺得欣欣推薦系統有多像真人？</div>';
-        mainPicture.innerHTML = '<div class="phone"><img alt="" ><div></div> <div class="iconTalk">欣欣購物根據您的喜好，找到了這款商品，想請問您喜歡嗎？如果不滿意，我會嘗試再找其他類型的商品給您</div>  <div class="productPic"><img src=' + recommendList[questionsCount] + '.png></div>  </div>';
+        mainPicture.innerHTML = '<div class="phone"><img src="" alt="" class="icon"> <div class="iconTalk">欣欣購物平台推薦此特賣商品給您，請問您想購買嗎？</div>  <div class="productPic"><img src="sport/sport4.png" alt=""></div>  </div>';
     }
 
 
@@ -180,7 +184,7 @@
     function say3(x) {
         questionsCount++;
 
-        var ask = recommendList[0]
+        var ask = '非推薦題'
         if ((questionsCount - 2) >= 0) {
             ask = recommendList[questionsCount - 2] + '.png'
         }
@@ -223,96 +227,92 @@
                 break;
         }
 
-        // 個人化問項
 
         // document.querySelector('.textTitle').innerHTML = '以下是我們的精選熱銷商品，推薦給您';
         document.querySelector('.buyText1').innerHTML = '非常不想購買';
         document.querySelector('.buyText2').innerHTML = '非常想購買';
         var mainPicture = document.querySelector('.pictureArea');
-        if (questionsCount <= (questionsNum + 1)) {
-            mainPicture.innerHTML = '<div class="phone"><img alt="" class="icon"><div></div> <div class="iconTalk">欣欣購物根據您的喜好，找到了這款商品，想請問您喜歡嗎？如果不滿意，我會嘗試再找其他類型的商品給您</div>  <div class="productPic"><img src=' + recommendList[questionsCount] + '.png></div>  </div>';
+        if (questionsCount <= questionsNum - 2) {
+            mainPicture.innerHTML = '<div class="phone"><img src="" alt="" class="icon"> <div class="iconTalk">欣欣購物平台推薦此特賣商品給您，請問您想購買嗎？</div>  <div class="productPic"><img src="home/home' + questionsCount + '.png" alt=""></div>  </div>';
         }
         // 個人化問項
-        else if (questionsCount == questionsNum + 2) {
+        else if (questionsCount == questionsNum - 1) {
             document.querySelector('.buyText1').innerHTML = '沒有';
             document.querySelector('.buyText2').innerHTML = '有';
             mainPicture.innerHTML = '<div class="interactive">我認為欣欣購物在推薦過程中有給我個人化的訊息</div>';
         }
-        else if (questionsCount == questionsNum + 3) {
+        else if (questionsCount == questionsNum) {
             document.querySelector('.buyText1').innerHTML = '沒有';
             document.querySelector('.buyText2').innerHTML = '有';
             mainPicture.innerHTML = '<div class="interactive">我認為欣欣購物有推薦商品給我</div>';
         }
-        else if (questionsCount == questionsNum + 4) {
+        else if (questionsCount == questionsNum + 1) {
             document.querySelector('.buyText1').innerHTML = '沒有';
             document.querySelector('.buyText2').innerHTML = '有';
             mainPicture.innerHTML = '<div class="interactive">我認為欣欣購物有提供我個人化的優惠訊息</div>';
         }
-        else if (questionsCount == questionsNum + 5) {
+        else if (questionsCount == questionsNum + 2) {
             document.querySelector('.buyText1').innerHTML = '沒有';
             document.querySelector('.buyText2').innerHTML = '有';
             mainPicture.innerHTML = '<div class="interactive">我認為欣欣購物有給我量身打造的推薦商品</div>';
         }
         // 擬人化問項
-        else if (questionsCount == questionsNum + 6) {
+        else if (questionsCount == questionsNum + 3) {
             document.querySelector('.buyText1').innerHTML = '不自然';
             document.querySelector('.buyText2').innerHTML = '很自然';
             mainPicture.innerHTML = '<div class="interactive">根據剛剛與欣欣購物的互動，你認為與欣欣購物互動得自然嗎？</div>';
         }
-        else if (questionsCount == questionsNum + 7) {
+        else if (questionsCount == questionsNum + 4) {
             document.querySelector('.buyText1').innerHTML = '像機器人';
             document.querySelector('.buyText2').innerHTML = '像真人';
             mainPicture.innerHTML = '<div class="interactive">根據剛剛與欣欣購物的互動，你認為與欣欣購物像真人嗎？</div>';
         }
-        else if (questionsCount == questionsNum + 8) {
+        else if (questionsCount == questionsNum + 5) {
             document.querySelector('.buyText1').innerHTML = '像人工的';
             document.querySelector('.buyText2').innerHTML = '很生動';
             mainPicture.innerHTML = '<div class="interactive">根據剛剛與欣欣購物的互動，你認為與欣欣購物夠生動嗎？</div>';
         }
-        else if (questionsCount == questionsNum + 9) {
+        else if (questionsCount == questionsNum + 6) {
             document.querySelector('.buyText1').innerHTML = '沒有意識';
             document.querySelector('.buyText2').innerHTML = '有意識';
             mainPicture.innerHTML = '<div class="interactive">根據剛剛與欣欣購物的互動，你認為與欣欣購物是有意識的嗎？</div>';
         }
-        else if (questionsCount == questionsNum + 10) {
+        else if (questionsCount == questionsNum + 7) {
             document.querySelector('.buyText1').innerHTML = '不好溝通';
             document.querySelector('.buyText2').innerHTML = '好溝通';
             mainPicture.innerHTML = '<div class="interactive">根據剛剛與欣欣購物的互動，你認為與欣欣購物是好溝通的嗎？</div>';
         }
         // 社會距離問項
-        else if (questionsCount == questionsNum + 11) {
+        else if (questionsCount == questionsNum + 8) {
             document.querySelector('.buyText1').innerHTML = '沒有';
             document.querySelector('.buyText2').innerHTML = '有';
             mainPicture.innerHTML = '<div class="interactive">我認為欣欣購物與我有相似的喜好</div>';
         }
-        else if (questionsCount == questionsNum + 12) {
+        else if (questionsCount == questionsNum + 9) {
             document.querySelector('.buyText1').innerHTML = '沒有';
             document.querySelector('.buyText2').innerHTML = '有';
             mainPicture.innerHTML = '<div class="interactive">我認為欣欣購物與我有相似的價值觀</div>';
         }
-        else if (questionsCount == questionsNum + 13) {
+        else if (questionsCount == questionsNum + 10) {
             document.querySelector('.buyText1').innerHTML = '沒有';
             document.querySelector('.buyText2').innerHTML = '有';
             mainPicture.innerHTML = '<div class="interactive">我認為欣欣購物與我很親近</div>';
         }
-        else if (questionsCount == questionsNum + 14) {
+        else if (questionsCount == questionsNum + 11) {
             document.querySelector('.buyText1').innerHTML = '沒有';
             document.querySelector('.buyText2').innerHTML = '有';
             mainPicture.innerHTML = '<div class="interactive">我認為欣欣購物與我屬於同一個族群</div>';
         }
-        else if (questionsCount == questionsNum + 15) {
+        else if (questionsCount == questionsNum + 12) {
             document.querySelector('.buyText1').innerHTML = '沒有';
             document.querySelector('.buyText2').innerHTML = '有';
             mainPicture.innerHTML = '<div class="interactive">我是一個跟欣欣購物很相似的人</div>';
         }
         else {
-            // sendSheet3(fn)
-            // sendSheet3(callbackFn)
-            window.location.href = "introduction_i_random.html"
+            window.location.href = "introduction_shin.html"
+            //  window.location.href = "thanks.html"
         }
     }
-
-    // 沒用到？？？
     function say3_2() {
         btn2Count++;
         questionsCount++;
@@ -327,7 +327,7 @@
         document.querySelector('.buyText2').innerHTML = '非常想購買';
         var mainPicture = document.querySelector('.pictureArea');
         if (questionsCount <= questionsNum) {
-            mainPicture.innerHTML = '<div class="phone"><div class="phone"><div class="recommendImg_shin_icon">欣欣購物平台</div> <div class="iconTalk">欣欣購物平台推薦此特賣商品給您，請問您想購買嗎？</div>  <div class="productPic"><img src="pic_only/sport/' + questionsCount + '.png" alt=""></div>  </div>';
+            mainPicture.innerHTML = '<div class="phone"><img src="" alt="" class="icon"> <div class="iconTalk">欣欣購物平台推薦此特賣商品給您，請問您想購買嗎？</div>  <div class="productPic"><img src="sport/sport' + questionsCount + '.png" alt=""></div>  </div>';
         }
         else {
             sendSheet3(callbackFn)
@@ -420,10 +420,8 @@
     }
 
     function callbackFn() {
-        window.location.href = "introduction_i_random.html";
+        window.location.href = "thanks.html";
     }
-
-
 
 
 

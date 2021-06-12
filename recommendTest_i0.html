@@ -92,7 +92,7 @@
         accessory = getUrlParameter('accessory');
 
         if (sport == 'true') {
-            recommendList.push('pic_only/sport/' + (getRandom(maxSport) + 1));
+            recommendList.push('sport/sport' + (getRandom(maxSport) + 1));
         }
         else {
             falseRecommendList.push('sport')
@@ -100,7 +100,7 @@
         }
 
         if (life == 'true') {
-            recommendList.push('pic_only/life/' + (getRandom(maxLife) + 1));
+            recommendList.push('life/life' + (getRandom(maxLife) + 1));
         }
         else {
             falseRecommendList.push('life')
@@ -108,7 +108,7 @@
         }
 
         if (food == 'true') {
-            recommendList.push('pic_only/food/' + (getRandom(maxFood) + 1));
+            recommendList.push('food/food' + (getRandom(maxFood) + 1));
         }
         else {
             falseRecommendList.push('food')
@@ -116,7 +116,7 @@
         }
 
         if (home == 'true') {
-            recommendList.push('pic_only/home/' + (getRandom(maxHome) + 1));
+            recommendList.push('home/home' + (getRandom(maxHome) + 1));
         }
         else {
             falseRecommendList.push('home')
@@ -124,7 +124,7 @@
         }
 
         if (computer == 'true') {
-            recommendList.push('pic_only/computer/' + (getRandom(maxComputer) + 1));
+            recommendList.push('computer/computer' + (getRandom(maxComputer) + 1));
         }
         else {
             falseRecommendList.push('computer')
@@ -132,7 +132,7 @@
         }
 
         if (accessory == 'true') {
-            recommendList.push('pic_only/accessory/' + (getRandom(maxAccessory) + 1));
+            recommendList.push('accessory/accessory' + (getRandom(maxAccessory) + 1));
         }
         else {
             falseRecommendList.push('accessory')
@@ -229,39 +229,94 @@
         }
 
 
-        // 個人化問卷問項
-        // document.querySelector('.textTitle').innerHTML = '我依據您的喜好，我推薦給您以下商品';
         document.querySelector('.buyText1').innerHTML = '非常不想購買';
         document.querySelector('.buyText2').innerHTML = '非常想購買';
         var mainPicture = document.querySelector('.pictureArea');
-        if (questionsCount <= (questionsNum - 1)) {
-            mainPicture.innerHTML = '<div class="phone"><img src="pictures/i.png" alt="" class="icon"><div></div> <div class="iconTalk">小艾根據您的喜好，找到了這款商品，想請問您喜歡嗎？如果不滿意，我會嘗試再找其他類型的商品給您ヽ(✿ﾟ▽ﾟ)ノ </div>  <div class="productPic"><img src=' + recommendList[questionsCount] + '.png></div>  </div>';
+        if (questionsCount <= (questionsNum + 2)) {
+            mainPicture.innerHTML = '<div class="phone"><img src="pictures/i.png" alt="" class="icon"><div></div> <div class="iconTalk">小艾根據您的喜好，找到了這款商品，一定非常適合您。請問您有意願購買嗎？(,,・ω・,,)</div>  <div class="productPic"><img src=' + recommendList[questionsCount] + '.png></div>  </div>';
         }
-
-        else if (questionsCount == questionsNum) {
+        // 個人化問項
+        else if (questionsCount == questionsNum + 3) {
             document.querySelector('.buyText1').innerHTML = '沒有';
             document.querySelector('.buyText2').innerHTML = '有';
             mainPicture.innerHTML = '<div class="interactive">我認為小艾在推薦過程中有給我個人化的訊息</div>';
         }
-        else if (questionsCount == questionsNum + 1) {
+        else if (questionsCount == questionsNum + 4) {
             document.querySelector('.buyText1').innerHTML = '沒有';
             document.querySelector('.buyText2').innerHTML = '有';
             mainPicture.innerHTML = '<div class="interactive">我認為小艾有推薦商品給我</div>';
         }
-        else if (questionsCount == questionsNum + 2) {
+        else if (questionsCount == questionsNum + 5) {
             document.querySelector('.buyText1').innerHTML = '沒有';
             document.querySelector('.buyText2').innerHTML = '有';
             mainPicture.innerHTML = '<div class="interactive">我認為小艾有提供我個人化的優惠訊息</div>';
         }
-        else if (questionsCount == questionsNum + 3) {
+        else if (questionsCount == questionsNum + 6) {
             document.querySelector('.buyText1').innerHTML = '沒有';
             document.querySelector('.buyText2').innerHTML = '有';
             mainPicture.innerHTML = '<div class="interactive">我認為小艾有給我量身打造的推薦商品</div>';
         }
+        // 擬人化問項
+        else if (questionsCount == questionsNum + 7) {
+            document.querySelector('.buyText1').innerHTML = '不自然';
+            document.querySelector('.buyText2').innerHTML = '很自然';
+            mainPicture.innerHTML = '<div class="interactive">根據剛剛與小艾的互動，你認為與小艾互動得自然嗎？</div>';
+        }
+        else if (questionsCount == questionsNum + 8) {
+            document.querySelector('.buyText1').innerHTML = '像機器人';
+            document.querySelector('.buyText2').innerHTML = '像真人';
+            mainPicture.innerHTML = '<div class="interactive">根據剛剛與小艾的互動，你認為與小艾像真人嗎？</div>';
+        }
+        else if (questionsCount == questionsNum + 9) {
+            document.querySelector('.buyText1').innerHTML = '像人工的';
+            document.querySelector('.buyText2').innerHTML = '很生動';
+            mainPicture.innerHTML = '<div class="interactive">根據剛剛與小艾的互動，你認為與小艾夠生動嗎？</div>';
+        }
+        else if (questionsCount == questionsNum + 10) {
+            document.querySelector('.buyText1').innerHTML = '沒有意識';
+            document.querySelector('.buyText2').innerHTML = '有意識';
+            mainPicture.innerHTML = '<div class="interactive">根據剛剛與小艾的互動，你認為與小艾是有意識的嗎？</div>';
+        }
+        else if (questionsCount == questionsNum + 11) {
+            document.querySelector('.buyText1').innerHTML = '不好溝通';
+            document.querySelector('.buyText2').innerHTML = '好溝通';
+            mainPicture.innerHTML = '<div class="interactive">根據剛剛與小艾的互動，你認為與小艾是好溝通的嗎？</div>';
+        }
+        // 社會距離問項
+        else if (questionsCount == questionsNum + 12) {
+            document.querySelector('.buyText1').innerHTML = '沒有';
+            document.querySelector('.buyText2').innerHTML = '有';
+            mainPicture.innerHTML = '<div class="interactive">我認為小艾與我有相似的喜好</div>';
+        }
+        else if (questionsCount == questionsNum + 13) {
+            document.querySelector('.buyText1').innerHTML = '沒有';
+            document.querySelector('.buyText2').innerHTML = '有';
+            mainPicture.innerHTML = '<div class="interactive">我認為小艾與我有相似的價值觀</div>';
+        }
+        else if (questionsCount == questionsNum + 14) {
+            document.querySelector('.buyText1').innerHTML = '沒有';
+            document.querySelector('.buyText2').innerHTML = '有';
+            mainPicture.innerHTML = '<div class="interactive">我認為小艾與我很親近</div>';
+        }
+        else if (questionsCount == questionsNum + 15) {
+            document.querySelector('.buyText1').innerHTML = '沒有';
+            document.querySelector('.buyText2').innerHTML = '有';
+            mainPicture.innerHTML = '<div class="interactive">我認為小艾與我屬於同一個族群</div>';
+        }
+        else if (questionsCount == questionsNum + 16) {
+            document.querySelector('.buyText1').innerHTML = '沒有';
+            document.querySelector('.buyText2').innerHTML = '有';
+            mainPicture.innerHTML = '<div class="interactive">我是一個跟小艾很相似的人</div>';
+        }
         else {
-            window.location.href = "introduction_ai.html"
+            window.location.href = "thanks.html"
         }
     }
+
+
+
+
+
 
 
 

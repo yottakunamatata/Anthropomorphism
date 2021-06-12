@@ -21,4 +21,4 @@ function httpGet(theUrl)
     return xmlHttp.responseText;
 }
 
-var abcde = httpGet('https://script.google.com/a/macros/mail.nuk.edu.tw/s/AKfycbzUEuJwnf8Yi8FCg-FCjeL_-KcvbAtINgB_uRDNQkM3-smZ7qoFYMbl5Q/exec')
+var abcde = httpGet('https://script.google.com/macros/s/AKfycbzMsXj0YeAC1UIPAmT_xNfInfxJEaZDwuy9doROS2pWcYM9WRDKRa_gWDeQpXzZOwux/exec')
