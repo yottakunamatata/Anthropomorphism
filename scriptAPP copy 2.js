@@ -2,7 +2,7 @@ function sendSheet(x) {
     if (x == 'i') {
         console.log(x)
         $.ajax({
-            url: "https://script.google.com/macros/s/AKfycbyKTVsHXJ_1Fg7fdAsdq3IzFA9bGurqIwt9MDLL8FkDQ7qWh9SwHLmpknAV7T0GFpko/exec",
+            url: "https://script.google.com/macros/s/AKfycbxOfYzldviTM7JQna5OKIxIn6qISZCbybiezlsJGAHowWVHOcYJLDKuwW5KDf75nUCJ/exec",
             data: {
                 "time": Date.now(),
                 "Character": '小艾',
@@ -36,7 +36,7 @@ function sendSheet(x) {
     else if (x == 'ai') {
         console.log(x)
         $.ajax({
-            url: "https://script.google.com/macros/s/AKfycbwfA3JR9FXgftsdqheKGGXGc1iCnJ7s1UlFDNP7b6n_HJTWL2Bcr8yhQA/exec",
+            url: "https://script.google.com/macros/s/AKfycbxOfYzldviTM7JQna5OKIxIn6qISZCbybiezlsJGAHowWVHOcYJLDKuwW5KDf75nUCJ/exec",
             data: {
                 "time": Date.now(),
                 "Character": 'AI助理',
@@ -70,7 +70,7 @@ function sendSheet(x) {
     else if (x == 'shin') {
         console.log(x)
         $.ajax({
-            url: "https://script.google.com/macros/s/AKfycbwfA3JR9FXgftsdqheKGGXGc1iCnJ7s1UlFDNP7b6n_HJTWL2Bcr8yhQA/exec",
+            url: "https://script.google.com/macros/s/AKfycbxOfYzldviTM7JQna5OKIxIn6qISZCbybiezlsJGAHowWVHOcYJLDKuwW5KDf75nUCJ/exec",
             data: {
                 "time": Date.now(),
                 "Character": '推薦系統',

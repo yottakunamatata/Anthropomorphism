@@ -22,9 +22,9 @@
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script src="main.js"></script>
-    <script src="scriptAPP.js"></script>
-    <title>Anthropomorphization Test Part2</title>
+
+    <script src="scriptAPP2.js"></script>
+    <title>index_ai</title>
 </head>
 
 <body>
@@ -32,31 +32,52 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJ9DFS4" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+
     <div class="container">
-        <div class="index">
-            <div class="indextxt">
-                <div class="indexTitle">「購物網站數位助理」前測問卷</div>
-                <div class="txt">非常謝謝您的幫忙！
+        <div class="textArea">
+            <div class="indexTitle">「購物網站數位助理」實驗問卷</div>
+            <div class="txt">大家好。<br>
+                我是就讀政治大學資管所的學生 張家欣。<br>
+                目前正在進行「購物網站數位助理」的實驗。<br>
+                <p></p>
+                <b>實驗中會有數位助理向您推薦商品。<br>
+                    請填寫您在與數位助理互動時的感受。</b><br>
+                本份問卷時長約 5 分鐘。<br>
+                答案沒有對錯，且資料僅供學術研究不會外流。<br>
+                <p></p>
+                🎁本問卷提供以下獎項：<br>
+                1. NT$1000 * 1名<br>
+                2. NT$500 * 2名<br>
+                3. NT$300 * 3名<br>
+                4. NT$200 * 4名<br>
+                獎項豐富，中獎機率高唷😆<br>
+                歡迎各位留下email以參加抽獎。<br>
+
+                <p></p>
+                國立政治大學資訊管理學系碩士班<br>
+                研究生：張家欣(108356030@g.nccu.edu.tw)<br>
+                指導教授：彭志宏 教授<br>
+                <div class="startQuestion"><button onclick='window.location.href="personal_info_ai.html"'>開始</button>
+                    <!-- <a
+                        href="https://docs.google.com/spreadsheets/d/1aqRCmozUUmYQGJQu_DZjtqvopcSJzxowsJt1GkVrBNk/edit#gid=0">結果測試</a> -->
                 </div>
             </div>
-        </div>
 
+        </div>
     </div>
-    </div>
+
+
+    <script>
+        window.onload = function () {
+            localStorage.clear();
+        };
+
+    </script>
 </body>
 
+
+
 </html>
-<script>
-    window.onload = function () {
-        window.document.documentElement.scrollTop = 800;
-    }
 
-    function fn() {
-        $(".btnNext").attr("disabled", false)
-    }
-    // 將function fn 帶入function sendSheet1
-    // sendSheet1 在scriptApp
-    sendSheet1_1(fn)
-
-    // localStorage.clear()
-</script>
+<!-- 改sheet連結 -->
+<!-- ai_induction : push i's outcome -->

@@ -1,6 +1,6 @@
 function sendSheet() {
     $.ajax({
-        url: "https://script.google.com/macros/s/AKfycbyKTVsHXJ_1Fg7fdAsdq3IzFA9bGurqIwt9MDLL8FkDQ7qWh9SwHLmpknAV7T0GFpko/exec",
+        url: "https://script.google.com/macros/s/AKfycbxOfYzldviTM7JQna5OKIxIn6qISZCbybiezlsJGAHowWVHOcYJLDKuwW5KDf75nUCJ/exec",
         data: {
             "time": Date.now(),
             "iPng1": localStorage.getItem('iPng1'),

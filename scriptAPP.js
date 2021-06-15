@@ -3,7 +3,7 @@
 function sendSheet1(fn) {
 
     $.ajax({
-        url: "https://script.google.com/macros/s/AKfycbyKTVsHXJ_1Fg7fdAsdq3IzFA9bGurqIwt9MDLL8FkDQ7qWh9SwHLmpknAV7T0GFpko/exec",
+        url: "https://script.google.com/macros/s/AKfycbxOfYzldviTM7JQna5OKIxIn6qISZCbybiezlsJGAHowWVHOcYJLDKuwW5KDf75nUCJ/exec",
         data: {
             "time": Date.now(),
             "Charactor2": '小艾_非個人化',
@@ -51,7 +51,7 @@ function sendSheet1(fn) {
 function sendSheet1_1(fn) {
 
     $.ajax({
-        url: "https://script.google.com/macros/s/AKfycbyKTVsHXJ_1Fg7fdAsdq3IzFA9bGurqIwt9MDLL8FkDQ7qWh9SwHLmpknAV7T0GFpko/exec",
+        url: "https://script.google.com/macros/s/AKfycbxOfYzldviTM7JQna5OKIxIn6qISZCbybiezlsJGAHowWVHOcYJLDKuwW5KDf75nUCJ/exec",
         data: {
             "time": Date.now(),
             "Charactor2": '小艾_個人化',
@@ -101,7 +101,7 @@ function sendSheet1_1(fn) {
 function sendSheet2(fn) {
 
     $.ajax({
-        url: "https://script.google.com/macros/s/AKfycbyKTVsHXJ_1Fg7fdAsdq3IzFA9bGurqIwt9MDLL8FkDQ7qWh9SwHLmpknAV7T0GFpko/exec",
+        url: "https://script.google.com/macros/s/AKfycbxOfYzldviTM7JQna5OKIxIn6qISZCbybiezlsJGAHowWVHOcYJLDKuwW5KDf75nUCJ/exec",
         data: {
             "time": Date.now(),
             "Charactor2": 'AI助理_非個人化',
@@ -150,7 +150,7 @@ function sendSheet2(fn) {
 function sendSheet2_1(fn) {
 
     $.ajax({
-        url: "https://script.google.com/macros/s/AKfycbyKTVsHXJ_1Fg7fdAsdq3IzFA9bGurqIwt9MDLL8FkDQ7qWh9SwHLmpknAV7T0GFpko/exec",
+        url: "https://script.google.com/macros/s/AKfycbxOfYzldviTM7JQna5OKIxIn6qISZCbybiezlsJGAHowWVHOcYJLDKuwW5KDf75nUCJ/exec",
         data: {
             "time": Date.now(),
             "Charactor2": 'AI助理_個人化',
@@ -199,7 +199,7 @@ function sendSheet2_1(fn) {
 
 function sendSheet3(fn) {
     $.ajax({
-        url: "https://script.google.com/macros/s/AKfycbyKTVsHXJ_1Fg7fdAsdq3IzFA9bGurqIwt9MDLL8FkDQ7qWh9SwHLmpknAV7T0GFpko/exec",
+        url: "https://script.google.com/macros/s/AKfycbxOfYzldviTM7JQna5OKIxIn6qISZCbybiezlsJGAHowWVHOcYJLDKuwW5KDf75nUCJ/exec",
         data: {
             "time": Date.now(),
             "Charactor2": '推薦系統_非個人化',
@@ -244,7 +244,7 @@ function sendSheet3(fn) {
 
 function sendSheet3_1(fn) {
     $.ajax({
-        url: "https://script.google.com/macros/s/AKfycbyKTVsHXJ_1Fg7fdAsdq3IzFA9bGurqIwt9MDLL8FkDQ7qWh9SwHLmpknAV7T0GFpko/exec",
+        url: "https://script.google.com/macros/s/AKfycbxOfYzldviTM7JQna5OKIxIn6qISZCbybiezlsJGAHowWVHOcYJLDKuwW5KDf75nUCJ/exec",
         data: {
             "time": Date.now(),
             "Charactor2": '推薦系統_個人化',
@@ -287,7 +287,25 @@ function sendSheet3_1(fn) {
     });
 };
 
-
+function sendSheet_Info(fn) {
+    $.ajax({
+        url: "https://script.google.com/macros/s/AKfycbxOfYzldviTM7JQna5OKIxIn6qISZCbybiezlsJGAHowWVHOcYJLDKuwW5KDf75nUCJ/exec",
+        data: {
+            "time": Date.now(),
+            'gender': localStorage.getItem('gender'),
+            "age": localStorage.getItem('age'),
+            "email": localStorage.getItem('email'),
+        },
+        success: function (response) {
+            if (response == "success") {
+                btn1Count = 0, btn2Count = 0, btn3Count = 0, btn4Count = 0, btn5Count = 0, btn6Count = 0;
+                console.log('感謝您')
+                fn()
+                //  localStorage.clear();
+            }
+        },
+    });
+};
 
 
 // function send() {

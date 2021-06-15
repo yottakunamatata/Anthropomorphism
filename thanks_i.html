@@ -22,9 +22,9 @@
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-
-    <script src="scriptAPP2.js"></script>
-    <title>Document</title>
+    <script src="main.js"></script>
+    <script src="scriptAPP.js"></script>
+    <title>Anthropomorphization Test Part2</title>
 </head>
 
 <body>
@@ -32,39 +32,33 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJ9DFS4" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-
     <div class="container">
-        <div class="textArea">
-            <div class="indexTitle">「購物網站數位助理」前測問卷</div>
-            <div class="txt">大家好。<br>
-                我是就讀政治大學資管所的學生 張家欣。<br>
-                目前正在進行「購物網站數位助理」的實驗。<br>
-                過程會有<b>三個不同的數位助理向您推薦商品。</b><br>
-                請您根據不同數位助理的情境，填寫您的感受。<br>
-                答案沒有對錯，且資料僅供學術研究不會外流。<br>
-                本份問卷時長約 5 分鐘，謝謝大家的協助。<br>
-                <div class="startQuestion"><button
-                        onclick='window.location.href="introduction_ai_random.html"'>開始</button>
-                    <!-- <a
-                        href="https://docs.google.com/spreadsheets/d/1aqRCmozUUmYQGJQu_DZjtqvopcSJzxowsJt1GkVrBNk/edit#gid=0">結果測試</a> -->
+        <div class="index">
+            <div class="indextxt">
+                <div class="indexTitle">「購物網站數位助理」前測問卷</div>
+                <div class="txt">非常謝謝您的幫忙！
                 </div>
             </div>
-
         </div>
+
     </div>
-
-
-    <script>
-        window.onload = function () {
-            localStorage.clear();
-        };
-
-    </script>
+    </div>
 </body>
 
-
-
 </html>
+<script>
+    window.onload = function () {
+        window.document.documentElement.scrollTop = 800;
+    }
 
-<!-- 改sheet連結 -->
-<!-- ai_induction : push i's outcome -->
+    function fn() {
+        $(".btnNext").attr("disabled", false)
+    }
+    sendSheet1_1(fn)
+    // 將function fn 帶入function sendSheet1
+    // sendSheet1 在scriptApp
+
+
+
+    // localStorage.clear()
+</script>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MJ9DFS4');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+    <script src="scriptAPP.js"></script>
+    <title>數位助理情境實驗2</title>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJ9DFS4" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container">
+        <div class="formArea">
+            <div class="textArea">
+                <div class="form">
+                    <form>
+                        <b>請選擇您的生理性別</b><br>
+                        <input type="radio" name="gender" id="gender" value="male"> 男<br>
+                        <input type="radio" name="gender" id="gender" value="female"> 女<br>
+                        <br>
+                        <br>
+                        <b>請選擇您的年齡區間 </b><br>
+                        <input type="radio" name="age" id="age" value="10_19"> 10 - 19 歲<br>
+                        <input type="radio" name="age" id="age" value="20_29"> 20 - 29歲<br>
+                        <input type="radio" name="age" id="age" value="30_39"> 30 - 39歲<br>
+                        <input type="radio" name="age" id="age" value="40_49"> 40 - 49歲<br>
+                        <input type="radio" name="age" id="age" value="50__"> 50 以上<br>
+                    </form>
+                    <br>
+
+                    <form name='form' id='form'> E-mail：
+                        <input type='text' name='email' id='email' />
+                        <br>
+                        <br>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="answerArea">
+            <input class="btn btn-success btnNext" type='button' name='submit' value='送出' onclick='getInfo()' />
+            <!-- <button class="btn btn-success btnNext" onclick="location.href='thanks.html'" disabled>下一步</button> -->
+        </div>
+    </div>
+</body>
+
+<script>
+    window.onload = function () {
+        window.document.documentElement.scrollTop = 800;
+    }
+
+    function fn() {
+        $(".btnNext").attr("disabled", false)
+    }
+    // 將function fn 帶入function sendSheet1
+    // sendSheet1 在scriptApp
+    // sendSheet1_1(fn)
+
+    // function fn() {
+    //     $(".btnNext").attr("disabled", false)
+    // }
+    // sendSheet1(fn)
+
+    // 三秒後才可按下一頁的按鈕
+    var leftSeconds = 2;
+    var intervalid;
+    $(function () {
+        $(".btnNext").attr("disabled", true);//開始讓他不可按
+        intervalid = setInterval("CountDown()", 1000);
+    });
+
+    function CountDown() {
+        if (leftSeconds == 0) {
+            $(".btnNext").attr("disabled", false);
+            clearInterval(intervalid);
+            return;
+        }
+        leftSeconds--;
+        // $("#btnReg").val("請仔細閱讀"+leftSeconds+"秒");
+    }
+
+
+    // var oform = document.forms["form"];
+    // var genderItem = [];
+    // var ageItem = [];
+    // var emailItem = [];
+
+
+
+    function getInfo() {
+        // male = getUrlParameter('male');
+        // female = getUrlParameter('female');
+        // tenTo19 = getUrlParameter('10_19');
+        // twentyTo29 = getUrlParameter('20_29');
+        // thirtyTo39 = getUrlParameter('30_39');
+        // fortyTo49 = getUrlParameter('40_49');
+        // fiftyUp = getUrlParameter('50__');
+
+        // var formData = {
+        //     'gender': $('input[name=gender]').val(),
+        //     'age': $('input[name=age]').val(),
+        //     'email': $('input[name=email]').val(),
+        // };
+        var infoCount = 1;
+        while (infoCount >= 1) {
+            var genderItem = $('input:radio[name="gender"]:checked').val();
+            var ageItem = $('input:radio[name="age"]:checked').val();
+            var emailItem = $('input[name=email]').val();
+            localStorage.setItem('gender', genderItem);
+            localStorage.setItem('age', ageItem);
+            localStorage.setItem('email', emailItem);
+            if (genderItem == null) {
+                alert("請選取性別");
+                return false;
+            }
+            if (ageItem == null) {
+                alert("請選取年齡");
+                return false;
+            }
+            if (emailItem == null | emailItem == '') {
+                alert("請輸入email");
+                return false;
+            }
+            else {
+                window.location.href = "introduction_i_random.html"
+            }
+
+            infoCount++;
+            break
+        }
+
+
+
+    }
+
+
+
+</script>
+
+
+
+
+
+</html>

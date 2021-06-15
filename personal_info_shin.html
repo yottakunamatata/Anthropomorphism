@@ -24,7 +24,7 @@
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="main.js"></script>
     <script src="scriptAPP.js"></script>
-    <title>Anthropomorphization Test Part2</title>
+    <title>數位助理情境實驗3</title>
 </head>
 
 <body>
@@ -47,8 +47,7 @@
                         <input type="radio" name="age" id="age" value="20_29"> 20 - 29歲<br>
                         <input type="radio" name="age" id="age" value="30_39"> 30 - 39歲<br>
                         <input type="radio" name="age" id="age" value="40_49"> 40 - 49歲<br>
-                        <input type="radio" name="age" id="age" value="50_59"> 50 - 59歲<br>
-                        <input type="radio" name="age" id="age" value="60_"> 60歲以上<br>
+                        <input type="radio" name="age" id="age" value="50__"> 50 以上<br>
                     </form>
                     <br>
 
@@ -78,7 +77,7 @@
     }
     // 將function fn 帶入function sendSheet1
     // sendSheet1 在scriptApp
-    sendSheet1_1(fn)
+    // sendSheet1_1(fn)
 
     // function fn() {
     //     $(".btnNext").attr("disabled", false)
@@ -103,67 +102,60 @@
         // $("#btnReg").val("請仔細閱讀"+leftSeconds+"秒");
     }
 
-    var infoCount = 1;
+
+    // var oform = document.forms["form"];
+    // var genderItem = [];
+    // var ageItem = [];
+    // var emailItem = [];
+
+
+
     function getInfo() {
+        // male = getUrlParameter('male');
+        // female = getUrlParameter('female');
+        // tenTo19 = getUrlParameter('10_19');
+        // twentyTo29 = getUrlParameter('20_29');
+        // thirtyTo39 = getUrlParameter('30_39');
+        // fortyTo49 = getUrlParameter('40_49');
+        // fiftyUp = getUrlParameter('50__');
+
+        // var formData = {
+        //     'gender': $('input[name=gender]').val(),
+        //     'age': $('input[name=age]').val(),
+        //     'email': $('input[name=email]').val(),
+        // };
+        var infoCount = 1;
         while (infoCount >= 1) {
+            var genderItem = $('input:radio[name="gender"]:checked').val();
+            var ageItem = $('input:radio[name="age"]:checked').val();
+            var emailItem = $('input[name=email]').val();
             localStorage.setItem('gender', genderItem);
             localStorage.setItem('age', ageItem);
             localStorage.setItem('email', emailItem);
+            if (genderItem == null) {
+                alert("請選取性別");
+                return false;
+            }
+            if (ageItem == null) {
+                alert("請選取年齡");
+                return false;
+            }
+            if (emailItem == null | emailItem == '') {
+                alert("請輸入email");
+                return false;
+            }
+            else {
+                window.location.href = "introduction_shin_random.html"
+            }
+
             infoCount++;
             break
         }
 
-        window.location.href = "thanks.html"
+
+
     }
 
-
-
-    // function say1(x) {
-    //     questionsCount++;
-
-    //     var ask = '非推薦題'
-    //     if ((questionsCount - 2) >= 0) {
-    //         ask = recommendList[questionsCount - 2] + '.png'
-    //     }
-
-    //     switch (x) {
-    //         case 1:
-    //             btn1Count++;
-    //             localStorage.setItem('iPng' + String(questionsCount), ask);
-    //             localStorage.setItem('iAns' + String(questionsCount), '1');
-    //             break;
-
-    //         case 2:
-    //             btn2Count++;
-    //             localStorage.setItem('iPng' + String(questionsCount), ask);
-    //             localStorage.setItem('iAns' + String(questionsCount), '2');
-    //             break;
-
-    //         case 3:
-    //             btn3Count++;
-    //             localStorage.setItem('iPng' + String(questionsCount), ask);
-    //             localStorage.setItem('iAns' + String(questionsCount), '3');
-    //             break;
-
-    //         case 4:
-    //             btn4Count++;
-    //             localStorage.setItem('iPng' + String(questionsCount), ask);
-    //             localStorage.setItem('iAns' + String(questionsCount), '4');
-    //             break;
-
-    //         case 5:
-    //             btn5Count++;
-    //             localStorage.setItem('iPng' + String(questionsCount), ask);
-    //             localStorage.setItem('iAns' + String(questionsCount), '5');
-    //             break;
-
-    //         case 6:
-    //             btn6Count++;
-    //             localStorage.setItem('iPng' + String(questionsCount), ask);
-    //             localStorage.setItem('iAns' + String(questionsCount), '6');
-    //             break;
-    //     }
-    // }
 
 
 </script>

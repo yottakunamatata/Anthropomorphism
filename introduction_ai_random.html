@@ -25,7 +25,7 @@
     <script src="main.js"></script>
     <script src="scriptAPP.js"></script>
 
-    <title>Anthropomorphization Test Part2</title>
+    <title>Anthropomorphization Test</title>
 </head>
 
 <body>
@@ -86,6 +86,12 @@
         leftSeconds--;
         // $("#btnReg").val("請仔細閱讀"+leftSeconds+"秒");
     }
+
+    function fn() {
+        $(".btnNext").attr("disabled", false)
+    }
+    // sendSheet3_1(fn)
+    sendSheet_Info(fn)
 
 
     // sendSheet1 : 將localStorage的資料回傳給google sheet
