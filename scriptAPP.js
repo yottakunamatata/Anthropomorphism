@@ -7,6 +7,9 @@ function sendSheet1(fn) {
         data: {
             "time": Date.now(),
             "Charactor2": '小艾_非個人化',
+            'gender': localStorage.getItem('gender'),
+            "age": localStorage.getItem('age'),
+            "email": localStorage.getItem('email'),
             "Png1": localStorage.getItem('iPng1'),
             "Png2": localStorage.getItem('iPng2'),
             "Png3": localStorage.getItem('iPng3'),
@@ -55,6 +58,9 @@ function sendSheet1_1(fn) {
         data: {
             "time": Date.now(),
             "Charactor2": '小艾_個人化',
+            'gender': localStorage.getItem('gender'),
+            "age": localStorage.getItem('age'),
+            "email": localStorage.getItem('email'),
             "Png1": localStorage.getItem('iPng1'),
             "Png2": localStorage.getItem('iPng2'),
             "Png3": localStorage.getItem('iPng3'),
@@ -105,6 +111,9 @@ function sendSheet2(fn) {
         data: {
             "time": Date.now(),
             "Charactor2": 'AI助理_非個人化',
+            'gender': localStorage.getItem('gender'),
+            "age": localStorage.getItem('age'),
+            "email": localStorage.getItem('email'),
             "Png1": localStorage.getItem('aiPng1'),
             "Png2": localStorage.getItem('aiPng2'),
             "Png3": localStorage.getItem('aiPng3'),
@@ -154,6 +163,9 @@ function sendSheet2_1(fn) {
         data: {
             "time": Date.now(),
             "Charactor2": 'AI助理_個人化',
+            'gender': localStorage.getItem('gender'),
+            "age": localStorage.getItem('age'),
+            "email": localStorage.getItem('email'),
             "Png1": localStorage.getItem('aiPng1'),
             "Png2": localStorage.getItem('aiPng2'),
             "Png3": localStorage.getItem('aiPng3'),
@@ -203,6 +215,9 @@ function sendSheet3(fn) {
         data: {
             "time": Date.now(),
             "Charactor2": '推薦系統_非個人化',
+            'gender': localStorage.getItem('gender'),
+            "age": localStorage.getItem('age'),
+            "email": localStorage.getItem('email'),
             "Png1": localStorage.getItem('shinPng1'),
             "Png2": localStorage.getItem('shinPng2'),
             "Png3": localStorage.getItem('shinPng3'),
@@ -247,6 +262,9 @@ function sendSheet3_1(fn) {
         url: "https://script.google.com/macros/s/AKfycbxOfYzldviTM7JQna5OKIxIn6qISZCbybiezlsJGAHowWVHOcYJLDKuwW5KDf75nUCJ/exec",
         data: {
             "time": Date.now(),
+            'gender': localStorage.getItem('gender'),
+            "age": localStorage.getItem('age'),
+            "email": localStorage.getItem('email'),
             "Charactor2": '推薦系統_個人化',
             "Png1": localStorage.getItem('shinPng1'),
             "Png2": localStorage.getItem('shinPng2'),
@@ -287,25 +305,25 @@ function sendSheet3_1(fn) {
     });
 };
 
-function sendSheet_Info(fn) {
-    $.ajax({
-        url: "https://script.google.com/macros/s/AKfycbxOfYzldviTM7JQna5OKIxIn6qISZCbybiezlsJGAHowWVHOcYJLDKuwW5KDf75nUCJ/exec",
-        data: {
-            "time": Date.now(),
-            'gender': localStorage.getItem('gender'),
-            "age": localStorage.getItem('age'),
-            "email": localStorage.getItem('email'),
-        },
-        success: function (response) {
-            if (response == "success") {
-                btn1Count = 0, btn2Count = 0, btn3Count = 0, btn4Count = 0, btn5Count = 0, btn6Count = 0;
-                console.log('感謝您')
-                fn()
-                //  localStorage.clear();
-            }
-        },
-    });
-};
+// function sendSheet_Info(fn) {
+//     $.ajax({
+//         url: "https://script.google.com/macros/s/AKfycbxOfYzldviTM7JQna5OKIxIn6qISZCbybiezlsJGAHowWVHOcYJLDKuwW5KDf75nUCJ/exec",
+//         data: {
+//             "time": Date.now(),
+//             'gender': localStorage.getItem('gender'),
+//             "age": localStorage.getItem('age'),
+//             "email": localStorage.getItem('email'),
+//         },
+//         success: function (response) {
+//             if (response == "success") {
+//                 btn1Count = 0, btn2Count = 0, btn3Count = 0, btn4Count = 0, btn5Count = 0, btn6Count = 0;
+//                 console.log('感謝您')
+//                 fn()
+//                 //  localStorage.clear();
+//             }
+//         },
+//     });
+// };
 
 
 // function send() {
